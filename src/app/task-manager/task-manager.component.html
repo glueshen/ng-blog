@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <mat-form-field class="input-form">
+      <input class="task-input" #textInput matInput [(ngModel)]="inputValue" (keydown)="onEnter($event)">
+      <button mat-icon-button matSuffix (click)="addCard()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <mat-card *ngFor="let task of tasksObservable | async">
+    <mat-card-content>{{task}}</mat-card-content>
+  </mat-card>
+</div>
